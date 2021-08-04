@@ -1,6 +1,6 @@
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
-		<form #formValue="ngForm" autocomplete="off" (submit)="loginForm()">
+		<form #formValue="ngForm" autocomplete="off" (submit)="loginForm(formValue)">
 			<h1>Sign in</h1>
 			<div class="social-container">
 				<a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>

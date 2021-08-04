@@ -9,7 +9,7 @@ import { Users } from '../Api_Classes/users';
 export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
-  singupApi="https://platesofflavor.herokuapp.com/postRegister";
+  singupApi="https://platesofflavor.herokuapp.com/postregister";
   singinApi="https://platesofflavor.herokuapp.com/postlogin"
    postSingup(formData):Observable<Users[]>{
     return this.http.post<Users[]>(this.singupApi, formData)

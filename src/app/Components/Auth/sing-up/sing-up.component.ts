@@ -25,7 +25,7 @@ formValue;
   ngOnInit(): void {
   }
  register(): void{
-  //  console.log(this.singUpValue.value);
+   console.log(this.singUpValue.value);
    this.formValue=this.singUpValue.value
    this.authService.postSingup(this.formValue).subscribe((response)=>{
      console.log(response);

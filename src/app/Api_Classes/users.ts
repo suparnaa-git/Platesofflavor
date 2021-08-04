@@ -1,5 +1,6 @@
 export class Users {
     email:string;
-    psw:string;
-
+    password:string;
+    fname:string;
+    lname:string;
 }

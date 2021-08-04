@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 
 @Component({
@@ -8,23 +9,36 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
   styleUrls: ['./sing-in.component.css']
 })
 export class SingInComponent implements OnInit {
-singInValue:FormGroup;
-formValue;
+  loginResponse;
 
-  constructor(private fb: FormBuilder,private authService:AuthenticationService) { 
-    this.singInValue=this.fb.group({
-      email:['',[Validators.required,Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]],
-      password:['',[Validators.required,Validators.pattern(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)]]
-  })
-
-  }
+  constructor(private fb: FormBuilder,private authService:AuthenticationService,private router:Router) { }
   ngOnInit(): void {
   }
-  loginForm(): void{
-   console.log(this.singInValue.value);
-   this.formValue=this.singInValue.value
-   this.authService.postSingIn(this.formValue).subscribe((response)=>{
+  loginForm(formValue): void{
+  //  console.log(this.singInValue.value);
+   const formValueget=formValue.value
+       console.log(formValueget)
+
+   this.authService.postSingIn(formValueget).subscribe((response)=>{ 
+     this.loginResponse=response
      console.log(response);
+     this.router.navigate(['/home'])
    })
  }
 }
+
+
+
+//   ngOnInit(): void { }
+//   loginForm(formValue: any) {
+//     // console.log(formValue.value);
+//     const formValueget = formValue.value;
+//     console.log(formValueget)
+//     this.authService.postSignin(formValueget).subscribe((respose) => {
+//         this.loginResponse = respose
+//         this.store.SetgetResponseFormLogin(this.loginResponse.token)
+//         console.log(respose);
+//         this.router.navigate(['/home'])
+//     });
+//   }
+// }
