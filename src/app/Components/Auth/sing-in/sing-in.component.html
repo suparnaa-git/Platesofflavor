@@ -1,0 +1,29 @@
+<div class="container" id="container">
+	<div class="form-container sign-in-container">
+		<form #formValue="ngForm" autocomplete="off" (submit)="loginForm()">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				<a href="#" class="social"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+				<a href="#" class="social"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email"  ngModel name="email" #username="ngModel" placeholder="Email" required>
+  <div *ngIf="username.invalid && username.touched">This field is required.</div>
+  <input type="text"  ngModel name="password" #password="ngModel" placeholder="Password" required>
+  <div *ngIf="password.invalid && password.touched" >This field is required.</div>
+			<a href="#">Forgot your password?</a>
+      <button type="submit" [disabled]="formValue.invalid">SUBMIT</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp" routerLink="/signup">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+

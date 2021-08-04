@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    
+    <title>Contact Us</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Quantico:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="contactus.component.css" type="text/css">
+</head>
+
+<body>
+    <!-- Breadcrumb Begin -->
+    <section  class="breadcrumb-area" style="background-image:url(../../../assets/ping.png);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="breadcrumb-content text-center">
+                        <h2 class="page-title" style="color: black;">Contact Us</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item" style="color: black;"><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" style="color: black;">Contact Us</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb End -->
+
+    <!-- Contact Section Begin -->
+    <!-- <div class="map" style="margin-bottom: 50px;margin-top: 50px; width: 1200px; padding-left: 90px;">
+        <iframe
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=sagarsphotography+parkcircus+kolkata"
+            height="635" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div> -->
+    <section class="contact-section spad" >
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact-text">
+                        <h3>Get in touch</h3>
+                        <p>We are here to answer any questions you may have about our service. Please submit your quarries.</p>
+                        <div class="ct-item">
+                            <div class="ct-icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="ct-text">
+                                <h5>Address</h5>
+                                <p>Kolkata,WestBengal</p>
+                            </div>
+                        </div>
+                        <div class="ct-item">
+                            <div class="ct-icon">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <div class="ct-text">
+                                <h5>Phone</h5>
+                                <ul style="padding-left: 0%;">
+                                    <li>+91 9830866034</li>
+                                    <!-- <li>+91 7003835629</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ct-item">
+                            <div class="ct-icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="ct-text">
+                                <h5>Email</h5>
+                                <p>platesofflavor@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact-form">
+                        <h3>Submit your Query!</h3>
+                        <form autocomplete="off" [formGroup]="contactUsValue" (submit)="register()">
+                            <input type="text" class="form-control" name="name" formControlName="name" placeholder="Name" value="" />
+			                <div *ngIf="contactUsValue.controls['name'].invalid && contactUsValue.controls['name'].touched">Name is requird</div>
+                            
+                            <input type="email" class="form-control" name="email" formControlName="email" placeholder="Email" value="" />
+			                <div *ngIf="contactUsValue.controls['email'].invalid && contactUsValue.controls['email'].touched" class="alert alert-danger"> Email is required.</div>
+                            
+                            <input type="text" class="form-control" name="number" formControlName="number" placeholder="Number" value="" />
+			                <div *ngIf="contactUsValue.controls['number'].invalid && contactUsValue.controls['number'].touched">Number is requird</div>
+
+                            <input type="text" class="form-control" name="message" formControlName="message" placeholder="Message" value="" />
+			                <div *ngIf="contactUsValue.controls['message'].invalid && contactUsValue.controls['message'].touched">Message is requird</div>
+
+                            <button type="submit" class="btn btn-outline-danger">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+</body>
+
+</html>
