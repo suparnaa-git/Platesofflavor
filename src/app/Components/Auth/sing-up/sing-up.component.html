@@ -1,19 +1,18 @@
-
 <div class="container" id="container">
 	<div class="form-container sign-in-container">
 		<form autocomplete="off" [formGroup]="singUpValue" (submit)="register()">
 			<h1>Sign up</h1>
-            <input type="text" class="form-control" name="firstname" formControlName="firstname" placeholder="First Name" value="" />
-			<div *ngIf="singUpValue.controls['firstname'].invalid && singUpValue.controls['firstname'].touched">This Field is requird</div>
+            <input type="text" class="form-control" name="fname" formControlName="fname" placeholder="First Name" value="" />
+			<div *ngIf="singUpValue.controls['fname'].invalid && singUpValue.controls['fname'].touched">This Field is requird</div>
 
-            <input type="text" class="form-control" name="lastname" formControlName="lastname" placeholder="Last Name" value="" />
-			<div *ngIf="singUpValue.controls['lastname'].invalid  && singUpValue.controls['lastname'].touched">This Field is requird</div>
+            <input type="text" class="form-control" name="lname" formControlName="lname" placeholder="Last Name" value="" />
+			<div *ngIf="singUpValue.controls['lname'].invalid  && singUpValue.controls['lname'].touched">This Field is requird</div>
 
 			<input type="email" class="form-control" name="email" formControlName="email" placeholder="Your Email" value="" />
 			<div *ngIf="singUpValue.controls['email'].invalid && singUpValue.controls['email'].touched" class="alert alert-danger"> email is required.</div>
 
-			<input type="text"   name="psw" formControlName="password" placeholder="Password"required>
-			<div *ngIf="singUpValue.controls['psw'].invalid && singUpValue.controls['psw'].touched" class="alert alert-danger"> Password is required.</div>
+			<input type="text"   name="password" formControlName="password" placeholder="Password" required>
+			<div *ngIf="singUpValue.controls['password'].invalid && singUpValue.controls['password'].touched" class="alert alert-danger"> Password is required.</div>
 
 			<button type="submit">SUBMIT</button>
 		</form>
