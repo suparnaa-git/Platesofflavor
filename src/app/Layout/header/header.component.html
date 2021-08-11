@@ -7,10 +7,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/about">About <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/about">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">Home</a>
+          <a class="nav-link" routerLink="/home">About</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" routerLink="/contactus">Contact Us</a>
@@ -23,6 +23,9 @@
             <a class="dropdown-item" routerLink="/signin">SignIn</a>
             <a class="dropdown-item" routerLink="/signup">Sign up</a>
           </div> -->
+        </li>
+        <li class="nav-item active">
+          <button class="nav-link" (click)="onclicklogout()">Log Out</button>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">

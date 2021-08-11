@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StorageService } from 'src/app/storage.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor( private store: StorageService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+  onclicklogout(){
+    this.store.removeToke()
+    this.router.navigate(['/signin'])
+
   }
 
 }
