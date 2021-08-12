@@ -26,7 +26,7 @@ export class SingInComponent implements OnInit {
      this.loginResponse=response
      this.store.SetResponseFromLogin(this.loginResponse.token)
      console.log(response);
-     this.router.navigate(['/home'])
+     this.router.navigate(['/about'])
    })
  }
 }
